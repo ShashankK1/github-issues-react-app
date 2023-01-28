@@ -1,0 +1,67 @@
+@import '../../styles';
+
+.Header {
+    background-color: $light-blue;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 32px 0px 32px;
+    row-gap: 24px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+
+    .repoHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .repo {
+            display: flex;
+            column-gap: 6px;
+            align-items: center;
+
+            .heading {
+
+                .facebook {
+                    color: $light-blue-txt;
+                    margin-right: 2px;
+                }
+
+                .react {
+                    color: $dark-blue-txt;
+                    font-weight: 600;
+                }
+
+                .react::before {
+                    content: '/';
+                    color: rgb(53, 53, 53);
+                    font-weight: 800;
+                    margin-right: 2px;
+                }
+
+            }
+
+            .goRepo {
+                color: rgb(49, 49, 49);
+                font-size: 0.78rem;
+            }
+
+            .public {
+                border: 1px solid grey;
+                border-radius: 8px;
+                font-size: 0.55rem;
+                padding: 2px 4px;
+            }
+        }
+
+        .repoButtons {
+            display: flex;
+            column-gap: 10px;
+            align-items: center;
+        }
+    }
+
+    .repoTabs {
+        display: flex;
+        justify-content: flex-start;
+        column-gap: 8px;
+    }
+}
