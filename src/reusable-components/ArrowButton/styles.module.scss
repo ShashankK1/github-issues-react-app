@@ -1,0 +1,16 @@
+.arrowButton {
+    display: flex;
+    align-items: center;
+
+    .text {
+        color: rgb(68, 68, 68);
+        font-size: 0.8rem;
+    }
+
+    .icon {
+        font-size: 0.5rem;
+        margin-top: 3px;
+        margin-left: 2px;
+        color: rgb(68, 68, 68);
+    }
+}

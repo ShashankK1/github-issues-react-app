@@ -1,0 +1,13 @@
+.label {
+    border-radius: 8px;
+    display: flex;
+    height: fit-content;
+    flex-wrap: nowrap;
+
+    .text {
+        display: flex;
+        flex-wrap: nowrap;
+        font-size: 0.55rem;
+        padding: 2px 4px;
+    }
+}
