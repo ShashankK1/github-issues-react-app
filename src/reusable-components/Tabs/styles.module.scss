@@ -1,0 +1,32 @@
+.tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    column-gap: 4px;
+
+
+    .icon {
+        display: flex;
+        align-items: center;
+    }
+
+    .text {
+        font-size: 0.8rem;
+    }
+
+    .value {
+        background-color: rgb(144, 178, 208);
+        border-radius: 8px;
+        padding: 1px 6px;
+        font-size: 0.8rem;
+    }
+
+
+
+
+}
+
+.selected {
+    border-bottom: 3px solid orange;
+}

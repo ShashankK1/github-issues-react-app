@@ -1,0 +1,15 @@
+.iconButton {
+    display: flex;
+    column-gap: 2px;
+    border: 1px solid gray;
+    padding: 2px 10px;
+    max-width: fit-content;
+    align-items: center;
+    border-radius: 6px;
+
+    .icon,
+    .text {
+        font-size: 0.6rem;
+    }
+
+}
