@@ -8,6 +8,7 @@ import axios from 'axios';
 import Issue from '../../reusable-components/Issue/Issue';
 
 const Body = ({ data }) => {
+
     let { open_issues } = data;
     open_issues = nFormatter(open_issues, 1);
     const arrowButtonsText = ['Author', 'Label', 'Projects', 'Milestones', 'Assignee', 'Sort'];
@@ -15,17 +16,46 @@ const Body = ({ data }) => {
     const url = 'https://api.github.com/repos/facebook/react/issues'
 
     const [issues, setIssues] = useState([]);
+    const [page, setPage] = useState(1);
+
+    const helper = () => {
+        if (window.innerHeight + document.documentElement.scrollTop + 1 >= document.documentElement.scrollHeight) {
+            setPage(prevPage => prevPage + 1);
+
+        }
+    }
+
+    const fetchData = () => {
+        axios.get(url
+            ,
+            {
+                params: {
+                    per_page: 10,
+                    page: page
+                }
+            }
+        ).then(res => {
+            if (res.status === 200) {
+                setIssues((prevData) => [...prevData, ...res.data]);
+            }
+        }).catch((err) => {
+            console.log(err);
+        })
+    }
 
     useEffect(() => {
-        axios.get(url).then(res => {
-            if (res.status === 200) {
-                console.log(res.data)
-                setIssues(res.data);
-            }
+        fetchData();
+    }, [page]);
+
+    useEffect(() => {
+        // fetchData();
+        window.addEventListener('scroll', helper);
+        return (() => {
+            window.removeEventListener('scroll', helper);
         })
     }, []);
 
-    const issueContent = issues.map(issue => (<Issue key={issue?.id} data={issue} />))
+    const issueContent = issues.map(issue => (<Issue key={issue?.number} data={issue} />))
 
     return (
         <div className={styles.body}>

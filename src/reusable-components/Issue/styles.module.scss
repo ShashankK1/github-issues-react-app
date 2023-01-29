@@ -1,3 +1,5 @@
+@import '../../styles';
+
 .icon {
     font-size: 0.8rem;
     color: green;
@@ -5,8 +7,24 @@
     margin-right: 4px;
 }
 
+.avatar {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+}
+
 .content {
     display: flex;
+}
+
+.content strong {
+    line-height: 1.4;
+}
+
+.statusText {
+    font-size: 0.8rem;
+    color: rgb(143, 143, 143);
+    margin-left: 16px;
 }
 
 .label {
@@ -59,4 +77,8 @@
     display: flex;
     column-gap: 2px;
     align-items: center;
+}
+
+.issue:hover {
+    background-color: $light-blue;
 }
