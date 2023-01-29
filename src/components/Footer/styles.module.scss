@@ -1,0 +1,24 @@
+.footer {
+    margin-top: 60px;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    padding: 35px 0px;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+
+    .firstComponent,
+    .secondComponent {
+        flex-grow: 4;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.text {
+    color: rgb(25, 140, 248);
+}
+
+.icon {
+    flex-grow: 2;
+}
